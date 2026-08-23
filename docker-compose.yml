@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: couple_admin
+      POSTGRES_PASSWORD: devpassword
+      POSTGRES_DB: couple_platform
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
